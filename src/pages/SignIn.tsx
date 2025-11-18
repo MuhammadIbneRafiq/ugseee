@@ -56,7 +56,7 @@ const SignIn = () => {
           <CardHeader className="text-center">
             <div className="flex items-center justify-center gap-2 mb-4">
               <Video className="h-8 w-8 text-primary" />
-              <span className="text-2xl font-bold text-gradient">VideoAI</span>
+              <span className="text-2xl font-bold text-gradient">UGSEE</span>
             </div>
             <CardTitle className="text-2xl">Welcome back</CardTitle>
             <CardDescription>Sign in to continue creating amazing videos</CardDescription>

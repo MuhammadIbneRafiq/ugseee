@@ -33,7 +33,7 @@ const Onboarding = () => {
       
       toast({
         title: "Profile completed!",
-        description: "Welcome to VideoAI. You have 5 free credits to get started.",
+        description: "Welcome to UGSEE. You have 5 free credits to get started.",
       });
       
       navigate('/dashboard');
@@ -59,9 +59,9 @@ const Onboarding = () => {
           <CardHeader className="text-center">
             <div className="flex items-center justify-center gap-2 mb-4">
               <Video className="h-8 w-8 text-primary" />
-              <span className="text-2xl font-bold text-gradient">VideoAI</span>
+              <span className="text-2xl font-bold text-gradient">UGSEE</span>
             </div>
-            <CardTitle className="text-3xl">Welcome to VideoAI!</CardTitle>
+            <CardTitle className="text-3xl">Welcome to UGSEE!</CardTitle>
             <CardDescription className="text-lg">
               Let's get to know you better to personalize your experience
             </CardDescription>

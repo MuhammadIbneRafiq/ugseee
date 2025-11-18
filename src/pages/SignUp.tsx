@@ -36,7 +36,7 @@ const SignUp = () => {
       await register(email, password);
       toast({
         title: "Account created!",
-        description: "Welcome to VideoAI. Let's get you set up.",
+        description: "Welcome to UGSEE. Let's get you set up.",
       });
       navigate('/onboarding');
     } catch (error) {
@@ -67,7 +67,7 @@ const SignUp = () => {
           <CardHeader className="text-center">
             <div className="flex items-center justify-center gap-2 mb-4">
               <Video className="h-8 w-8 text-primary" />
-              <span className="text-2xl font-bold text-gradient">VideoAI</span>
+              <span className="text-2xl font-bold text-gradient">UGSEE</span>
             </div>
             <CardTitle className="text-2xl">Create your account</CardTitle>
             <CardDescription>Start creating amazing AI videos today</CardDescription>

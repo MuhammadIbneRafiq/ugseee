@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { 
   Video, 
@@ -11,8 +11,6 @@ import {
   ArrowRight,
   CheckCircle,
   Star,
-  TrendingUp,
-  Share2
 } from 'lucide-react';
 import { NavBar } from '@/components/NavBar';
 import heroImage from '@/assets/hero-image.jpg';
@@ -45,7 +43,7 @@ const Index = () => {
       name: "Sarah Johnson",
       role: "Marketing Manager",
       company: "TechCorp",
-      content: "VideoAI has transformed our content creation process. We're now producing 5x more videos with half the effort.",
+      content: "UGSEE has transformed our content creation process. We're now producing 5x more videos with half the effort.",
       rating: 5
     },
     {
@@ -62,13 +60,6 @@ const Index = () => {
       content: "Perfect for our social media campaigns. The variety of styles and formats keeps our content fresh and engaging.",
       rating: 5
     }
-  ];
-
-  const stats = [
-    { value: "50K+", label: "Videos Generated" },
-    { value: "10K+", label: "Happy Creators" },
-    { value: "99.9%", label: "Uptime" },
-    { value: "4.9/5", label: "User Rating" }
   ];
 
   return (
@@ -96,14 +87,14 @@ const Index = () => {
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Button asChild className="btn-hero">
                   <Link to="/signup">
-                    Start Free Trial
+                    Get started!
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
                 <Button asChild variant="outline" className="btn-ghost">
-                  <Link to="/for-you">
+                  <Link to="/signin">
                     <Play className="mr-2 h-4 w-4" />
-                    Watch Examples
+                    Sign in
                   </Link>
                 </Button>
               </div>
@@ -132,22 +123,6 @@ const Index = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent rounded-2xl" />
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-16 border-t border-border/20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center animate-scale-in">
-                <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-muted-foreground">{stat.label}</div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -240,7 +215,7 @@ const Index = () => {
               Loved by <span className="text-gradient">Creators</span>
             </h2>
             <p className="text-xl text-muted-foreground">
-              See what our community has to say about VideoAI
+              See what our community has to say about UGSEE
             </p>
           </div>
           
@@ -274,7 +249,7 @@ const Index = () => {
             Ready to Create Amazing Videos?
           </h2>
           <p className="text-xl text-white/80 mb-8">
-            Join thousands of creators who are already using VideoAI to transform their content
+            Join thousands of creators who are already using UGSEE to transform their content
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90">
@@ -299,7 +274,7 @@ const Index = () => {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <Video className="h-6 w-6 text-primary" />
-                <span className="text-xl font-bold text-gradient">VideoAI</span>
+                <span className="text-xl font-bold text-gradient">UGSEE</span>
               </div>
               <p className="text-muted-foreground">
                 Create stunning AI-powered videos in minutes, not hours.
@@ -331,7 +306,7 @@ const Index = () => {
             </div>
           </div>
           <div className="border-t border-border/20 mt-8 pt-8 text-center text-muted-foreground">
-            <p>&copy; 2024 VideoAI. All rights reserved.</p>
+            <p>&copy; 2024 UGSEE. All rights reserved.</p>
           </div>
         </div>
       </footer>

@@ -25,30 +25,20 @@ export const NavBar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
             <Video className="h-8 w-8 text-primary" />
-            <span className="text-2xl font-bold text-gradient">VideoAI</span>
+            <span className="text-2xl font-bold text-gradient">UGSEE</span>
           </Link>
 
           {/* Navigation Links */}
           <div className="hidden md:flex items-center gap-6">
             {isAuthenticated && (
-              <>
-                <Link
-                  to="/dashboard"
-                  className={`text-sm font-medium transition-colors hover:text-primary ${
-                    isActive('/dashboard') ? 'text-primary' : 'text-muted-foreground'
-                  }`}
-                >
-                  Dashboard
-                </Link>
-                <Link
-                  to="/for-you"
-                  className={`text-sm font-medium transition-colors hover:text-primary ${
-                    isActive('/for-you') ? 'text-primary' : 'text-muted-foreground'
-                  }`}
-                >
-                  For You
-                </Link>
-              </>
+              <Link
+                to="/dashboard"
+                className={`text-sm font-medium transition-colors hover:text-primary ${
+                  isActive('/dashboard') ? 'text-primary' : 'text-muted-foreground'
+                }`}
+              >
+                Dashboard
+              </Link>
             )}
             <Link
               to="/pricing"
@@ -57,6 +47,14 @@ export const NavBar = () => {
               }`}
             >
               Pricing
+            </Link>
+            <Link
+              to="/for-you"
+              className={`text-sm font-medium transition-colors hover:text-primary ${
+                isActive('/for-you') ? 'text-primary' : 'text-muted-foreground'
+              }`}
+            >
+              For You
             </Link>
           </div>
 

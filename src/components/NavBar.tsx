@@ -1,7 +1,8 @@
+import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/contexts/AuthContext';
-import { Video, LogOut, User, CreditCard, Sparkles } from 'lucide-react';
+import { Video, LogOut, User, CreditCard, Sparkles, Sun, Moon } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,7 +17,37 @@ export const NavBar = () => {
   const { user, isAuthenticated, logout } = useAuth();
   const location = useLocation();
 
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+
   const isActive = (path: string) => location.pathname === path;
+
+  useEffect(() => {
+    const stored = typeof window !== 'undefined' ? localStorage.getItem('theme') : null;
+    const prefersDark = typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const initial: 'light' | 'dark' = stored === 'dark' || (!stored && prefersDark) ? 'dark' : 'light';
+
+    setTheme(initial);
+    if (initial === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    setTheme((prev) => {
+      const next: 'light' | 'dark' = prev === 'light' ? 'dark' : 'light';
+      if (next === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('theme', next);
+      }
+      return next;
+    });
+  };
 
   return (
     <nav className="border-b border-border/20 bg-background/80 backdrop-blur-sm sticky top-0 z-50">
@@ -58,8 +89,23 @@ export const NavBar = () => {
             </Link>
           </div>
 
-          {/* Auth Section */}
+          {/* Theme + Auth Section */}
           <div className="flex items-center gap-4">
+            <Button
+              type="button"
+              variant="ghost"
+              size="icon"
+              onClick={toggleTheme}
+              className="rounded-full border border-border/40"
+              aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            >
+              {theme === 'dark' ? (
+                <Sun className="h-4 w-4" />
+              ) : (
+                <Moon className="h-4 w-4" />
+              )}
+            </Button>
+
             {isAuthenticated ? (
               <>
                 <Badge variant="outline" className="hidden sm:flex">

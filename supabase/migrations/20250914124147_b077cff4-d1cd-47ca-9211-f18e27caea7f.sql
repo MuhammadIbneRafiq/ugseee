@@ -59,13 +59,19 @@ CREATE TABLE public.videos (
   id UUID NOT NULL DEFAULT gen_random_uuid() PRIMARY KEY,
   user_id UUID NOT NULL,
   title TEXT NOT NULL,
-  script TEXT,
+  script TEXT NOT NULL,
+  character_description TEXT,
+  setting_description TEXT,
+  other_requests TEXT,
+  duration_option INTEGER, -- selected preset duration in seconds
+  aspect_ratio TEXT, -- e.g. '9:16', '1:1', '16:9'
+  image_model TEXT, -- e.g. 'nano', 'seadream'
   status TEXT NOT NULL DEFAULT 'draft' CHECK (status IN ('draft', 'processing', 'completed', 'failed')),
   is_public BOOLEAN NOT NULL DEFAULT false,
   category_id UUID REFERENCES public.categories(id),
   thumbnail_url TEXT,
   video_url TEXT,
-  duration INTEGER, -- in seconds
+  duration INTEGER, -- actual rendered duration in seconds
   settings JSONB DEFAULT '{}'::jsonb,
   metadata JSONB DEFAULT '{}'::jsonb,
   created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(),

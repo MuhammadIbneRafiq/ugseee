@@ -189,7 +189,7 @@ const ForYou = () => {
               </Button>
             ))}
           </div>
-        )}
+        
       </div>
 
         {/* Trending Section */}

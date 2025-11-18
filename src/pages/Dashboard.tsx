@@ -312,7 +312,6 @@ const Dashboard = () => {
                 </Card>
               ))}
             </div>
-          )}
         </TabsContent>
       </Tabs>
     </div>
